@@ -1,0 +1,8 @@
+.git
+.gitignore
+target/*.original
+target/*.zip
+**/*.iml
+.classpath
+.project
+.settings/
