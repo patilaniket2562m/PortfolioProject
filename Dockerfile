@@ -1,13 +1,13 @@
 FROM tomcat:10.1-jdk17
 
-# Remove default webapps
+# Remove default apps
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Deploy your app as ROOT (served at "/")
+# Copy your WAR file
 COPY target/PortfolioProject.war /usr/local/tomcat/webapps/ROOT.war
 
-# Help Render detect the port
+# Explicitly expose the HTTP port
 EXPOSE 8080
 
-# Start Tomcat in foreground
+# Start Tomcat
 CMD ["catalina.sh", "run"]
