@@ -13,30 +13,31 @@ public class PortfolioServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
 
-        // Basic Info
+        // ✅ Basic Info
         request.setAttribute("name", "Aniket Patil");
         request.setAttribute("role", "Passionate Full Stack Developer");
         request.setAttribute("about", "Full Stack Developer with hands-on experience in Java, Spring Boot, MySQL, and React.js. "
                 + "Eager to contribute to impactful projects and grow in a dynamic tech environment.");
 
-        // Contact Info
+        // ✅ Contact Info
         request.setAttribute("email", "patilaniket2562m@gmail.com");
         request.setAttribute("phone", "9112261074");
         request.setAttribute("location", "Kolhapur, India");
-        request.setAttribute("linkedin", "https://linkedin.com/in/aniket-patil-5b6a78260");
+        request.setAttribute("linkedin", "https://linkedin.com/in/Aniket-patil-5b6a78260");
         request.setAttribute("github", "https://github.com/patilaniket2562m");
 
-        // Education
-        List<String> education = new ArrayList<>();
-        education.add("MCA - KIT’s Institute Of Management Education And Research (2023 - 2025), 66.09%");
-        education.add("BCA - New College Kolhapur (2021 - 2023), 78.82%");
-        education.add("HSC - L.T.D.P. Junior College Kalkundri (2018 - 2020), 59.23%");
+        // ✅ Education
+        List<String> education = Arrays.asList(
+                "MCA - KIT’s Institute Of Management Education And Research (2023 - 2025), 66.09%",
+                "BCA - New College Kolhapur (2021 - 2023), 78.82%",
+                "HSC - L.T.D.P. Junior College Kalkundri (2018 - 2020), 59.23%"
+        );
         request.setAttribute("education", education);
 
-        // Work Experience
+        // ✅ Work Experience
         List<Map<String, String>> experience = new ArrayList<>();
 
         Map<String, String> exp1 = new LinkedHashMap<>();
@@ -55,20 +56,21 @@ public class PortfolioServlet extends HttpServlet {
 
         request.setAttribute("experience", experience);
 
-        // Skills
+        // ✅ Skills
         List<String> skills = Arrays.asList(
-                "Java", "Spring Boot", "Hibernate", "Servlet", "JSP",
+                "Java", "Spring Boot", "Hibernate", "Servlet", "JSP", 
                 "React.js", "JavaScript", "HTML", "CSS", "Bootstrap", "MySQL", "SQL Server"
         );
         request.setAttribute("skills", skills);
 
-        // Projects
-        List<String> projects = new ArrayList<>();
-        projects.add("Online Auction System – Dual-user platform for real-time bidding using Java, JSP, Servlet, and MySQL.");
-        projects.add("Online Attendance System – Role-based attendance management using ASP.NET, SQL Server, and MySQL.");
+        // ✅ Projects
+        List<String> projects = Arrays.asList(
+                "Online Auction System – Dual-user platform for real-time bidding using Java, JSP, Servlet, and MySQL.",
+                "Online Attendance System – Role-based attendance management using ASP.NET, SQL Server, and MySQL."
+        );
         request.setAttribute("projects", projects);
 
-        // Forward to JSP
+        // ✅ Forward to JSP
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }
