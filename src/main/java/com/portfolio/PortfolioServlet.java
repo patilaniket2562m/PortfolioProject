@@ -13,7 +13,7 @@ public class PortfolioServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         // Basic Info
@@ -26,7 +26,7 @@ public class PortfolioServlet extends HttpServlet {
         request.setAttribute("email", "patilaniket2562m@gmail.com");
         request.setAttribute("phone", "9112261074");
         request.setAttribute("location", "Kolhapur, India");
-        request.setAttribute("linkedin", "https://linkedin.com/Aniket-patil-5b6a78260");
+        request.setAttribute("linkedin", "https://linkedin.com/in/aniket-patil-5b6a78260");
         request.setAttribute("github", "https://github.com/patilaniket2562m");
 
         // Education
@@ -57,7 +57,7 @@ public class PortfolioServlet extends HttpServlet {
 
         // Skills
         List<String> skills = Arrays.asList(
-                "Java", "Spring Boot", "Hibernate", "Servlet", "JSP", 
+                "Java", "Spring Boot", "Hibernate", "Servlet", "JSP",
                 "React.js", "JavaScript", "HTML", "CSS", "Bootstrap", "MySQL", "SQL Server"
         );
         request.setAttribute("skills", skills);
