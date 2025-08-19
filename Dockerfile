@@ -1,12 +1,13 @@
-FROM tomcat:10.1-jdk17
+# Use Tomcat base image with Java 17
+FROM tomcat:9.0-jdk17
 
-# Remove default apps
-RUN rm -rf /usr/local/tomcat/webapps/*
+# Remove default ROOT app
+RUN rm -rf /usr/local/tomcat/webapps/ROOT
 
-# Copy your WAR file
-COPY target/PortfolioProject.war /usr/local/tomcat/webapps/ROOT.war
+# Copy your WAR into Tomcat as ROOT.war
+COPY ROOT.war /usr/local/tomcat/webapps/ROOT.war
 
-# Explicitly expose the HTTP port
+# Expose port 8080
 EXPOSE 8080
 
 # Start Tomcat

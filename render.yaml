@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: portfolio-project
+    env: docker
+    plan: free
+    autoDeploy: true
+    ports:
+      - port: 8080
+        protocol: tcp
